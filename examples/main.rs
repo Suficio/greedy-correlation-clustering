@@ -39,7 +39,7 @@ fn correlate(
     }
 
     let file_name = format!("examples/correlations/s_correlations_{}_{}.npy", lower_bound, higher_bound);
-    Array4::<u16>::read_npy(fs::File::open(&file_name).unwrap()).unwrap().mapv(|a| (a as f64) / 65535.)
+    Array4::<u8>::read_npy(fs::File::open(&file_name).unwrap()).unwrap().mapv(|a| (a as f64) / 255.)
 }
 
 // Utility Functions
