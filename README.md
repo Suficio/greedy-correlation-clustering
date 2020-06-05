@@ -8,7 +8,7 @@ This is an example implementation of correlation clustering through greedy VOTE 
 
 `[2] Gionis, A., Mannila, H., and Tsaparas, P., “Clustering Aggregation”, ACM Transactions on Knowledge Discovery from Data, 2007`
 
-This was originally written for a university project therefore I make little attempt to optimize it. The repository is thus only intended to provide reference, as it applicability is limited.
+This was originally written for a university project therefore I make little attempt to optimize it. The repository is thus only intended to provide reference, as its applicability is limited.
 
 To run the example clustering use the following command:
 
