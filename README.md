@@ -1,6 +1,6 @@
 # Greedy Correlation Clustering
  
-![Example clustering](https://github.com/CheezBarger/correlation-clustering/blob/master/banner.png)
+![Example clustering](./banner.png)
 
 This is an example implementation of correlation clustering through greedy VOTE and Best One Element Move (LOCALSEARCH) as provided by Elsner and Schudy (2009) and Gionis et al. (2007). The implementation is intended to cluster geographical areas based on Pearson's correlation between two pixels.
 
