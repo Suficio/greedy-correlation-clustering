@@ -1,11 +1,11 @@
 use ndarray::{Array2, ArrayView4};
 
 pub fn cc_vote_logarithmic(
-    clusters: &mut Array2::<usize>,
-    cluster_indices: &mut Vec::<Vec::<(usize, usize)>>,
-    correlations: ArrayView4::<f64>,
+    clusters: &mut Array2<usize>,
+    cluster_indices: &mut Vec<Vec<(usize, usize)>>,
+    correlations: ArrayView4<f64>,
     pi: impl Iterator<Item = (usize, usize)>,
-    no_clusters: usize
+    no_clusters: usize,
 ) {
     // https://pdfs.semanticscholar.org/1c37/b0b78434f415ced54c87615cadacd955430a.pdf
     for i in pi {
@@ -42,12 +42,13 @@ pub fn cc_vote_logarithmic(
     }
 }
 
+#[allow(dead_code)]
 pub fn cc_vote_additive(
-    clusters: &mut Array2::<usize>,
-    cluster_indices: &mut Vec::<Vec::<(usize, usize)>>,
-    correlations: ArrayView4::<f64>,
+    clusters: &mut Array2<usize>,
+    cluster_indices: &mut Vec<Vec<(usize, usize)>>,
+    correlations: ArrayView4<f64>,
     pi: impl Iterator<Item = (usize, usize)>,
-    no_clusters: usize
+    no_clusters: usize,
 ) {
     // https://pdfs.semanticscholar.org/1c37/b0b78434f415ced54c87615cadacd955430a.pdf
     for i in pi {
@@ -59,7 +60,7 @@ pub fn cc_vote_additive(
             for j in c.iter() {
                 // Calculate net weight according to additive weights:
                 // w_ij^+_ = w_ij^+ - w_ij^-, w_ij^+ = p_ij, w_ij^- = 1 - p_ij
-                c_quality += 2.*correlations[(i.0, i.1, j.0, j.1)] - 1.
+                c_quality += 2. * correlations[(i.0, i.1, j.0, j.1)] - 1.
             }
 
             // Maximizes c_star_quality
